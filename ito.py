@@ -2,10 +2,13 @@ import discord
 import random
 
 
-token = ''
-command = '/ito'
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
+
+
+def token():
+    with open('token.txt') as file:
+        return file.readline()
 
 
 def random_theme(num):
@@ -44,6 +47,7 @@ async def on_message(message):
     if message.author.bot:
         return
     content = message.content
+    command = '/ito'
     if content.startswith(command) == False:
         return
     num = 1
@@ -57,4 +61,4 @@ async def on_message(message):
     await message.channel.send(random_theme(2) + ito_random(entry_member, num))
 
 
-client.run(token)
+client.run(token())
