@@ -1,14 +1,10 @@
 import discord
 import random
+import os
 
 
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
-
-
-def token():
-    with open('token.txt') as file:
-        return file.readline()
 
 
 def random_theme(num):
@@ -61,4 +57,4 @@ async def on_message(message):
     await message.channel.send(random_theme(2) + ito_random(entry_member, num))
 
 
-client.run(token())
+client.run(os.environ['ITO_BOT_TOKEN'])
