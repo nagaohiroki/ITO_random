@@ -8,13 +8,27 @@ intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
 
+def random_theme(num):
+    with open('theme.txt', 'r') as file:
+        lines = file.readlines()
+        if len(lines) < num:
+            return ''
+        card = range(len(lines))
+        card = random.sample(card, len(card))
+        picks = card[0:num]
+        txt = ''
+        for pick in picks:
+            txt += f'{lines[pick]}'
+        return txt
+
+
 def ito_random(players, card_num):
     card = range(1, 101)
-    rand = random.sample(card, len(card))
+    card = random.sample(card, len(card))
     txt = ''
     i = 0
     for player in players:
-        num = rand[card_num * i : card_num * (i + 1)]
+        num = card[card_num * i : card_num * (i + 1)]
         txt += f'<@{player}> ||{num}||\n'
         i += 1
     return txt
@@ -40,7 +54,7 @@ async def on_message(message):
     for member in message.guild.members:
         if member.bot == False and member.status == discord.Status.online:
             entry_member.append(member.id)
-    await message.channel.send(ito_random(entry_member, num))
+    await message.channel.send(random_theme(2) + ito_random(entry_member, num))
 
 
 client.run(token)
