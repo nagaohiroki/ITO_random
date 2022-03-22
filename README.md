@@ -2,10 +2,21 @@
 
 this is discord bot.
 
+### Setup
+
+```
+python -m pip install -U discord
+export ITO_BOT_TOKEN=token
+```
+
+and bot setting.  
+enable [PRESENCE INTENT] and [SERVER MEMBERS INTENT]
+
+
 ### Launch
 
 ```
-$python ito.py
+python ito.py
 ```
 
 ### Message
