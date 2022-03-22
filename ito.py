@@ -1,6 +1,7 @@
 import discord
 import random
 import os
+import codecs
 
 
 intents = discord.Intents.all()
@@ -8,7 +9,7 @@ client = discord.Client(intents=intents)
 
 
 def random_theme(num):
-    with open('theme.txt', 'r') as file:
+    with codecs.open('theme.txt', 'r', 'cp932') as file:
         lines = file.readlines()
         if len(lines) < num:
             return ''
