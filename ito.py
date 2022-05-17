@@ -27,7 +27,10 @@ def ito_random(players, card_num):
     i = 0
     for player in players:
         num = card[card_num * i : card_num * (i + 1)]
-        txt += f'<@{player}> ||{num}||\n'
+        num_txt = ''
+        for n in num:
+            num_txt += f'[{n:3}]'
+        txt += f'<@{player}> ||{num_txt}||\n'
         i += 1
     return txt
 
