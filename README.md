@@ -7,12 +7,14 @@ this is discord bot.
 MacOS
 ```
 sudo python3 -m pip install -U "discord.py[voice]"
+sudo python3 -m pip install gspread oauth2client
 export ITO_BOT_TOKEN=token
 ```
 
 Windows
 ```
 python -m pip install -U "discord.py[voice]"
+python -m pip install gspread oauth2client
 SETX /M ITO_BOT_TOKEN "token"
 ```
 
