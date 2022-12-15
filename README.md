@@ -2,7 +2,7 @@
 
 this is discord bot.
 
-### Setup
+## Setup
 
 MacOS
 ```
@@ -16,11 +16,15 @@ python -m pip install -U "discord.py[voice]"
 SETX /M ITO_BOT_TOKEN "token"
 ```
 
-and bot setting.  
+## Discrod Setting
+
+https://discordpy.readthedocs.io/ja/latest/discord.html
+
+MyApplications -> SETTINGS/Bot -> Privileged Gateway Intents
 enable [PRESENCE INTENT] and [SERVER MEMBERS INTENT]
 
 
-### Launch
+## Launch
 
 
 MacOS
@@ -33,7 +37,7 @@ Windows
 python ito.py
 ```
 
-### Message
+## Message
 
 a card
 
