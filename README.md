@@ -18,12 +18,14 @@ python -m pip install gspread oauth2client
 SETX /M ITO_BOT_TOKEN "token"
 ```
 
-## Discrod Setting
+## Discrod Setting(enable Intents)
 
 https://discordpy.readthedocs.io/ja/latest/discord.html
 
 MyApplications -> SETTINGS/Bot -> Privileged Gateway Intents
-enable [PRESENCE INTENT] and [SERVER MEMBERS INTENT]
+[PRESENCE INTENT] 
+[SERVER MEMBERS INTENT]
+[MESSAGE CONTENT INTENT]
 
 
 ## Launch
